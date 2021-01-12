@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_books">
+
+    <fragment
+        android:id="@+id/nav_books"
+        android:name="by.test.turvo.ui.books.books.BooksFragment"
+        android:label="@string/menu_all"
+        tools:layout="@layout/fragment_base_books" />
+
+    <fragment
+        android:id="@+id/nav_favorites"
+        android:name="by.test.turvo.ui.books.favorites.FavoritesFragment"
+        android:label="@string/menu_favorites"
+        tools:layout="@layout/fragment_base_books" />
+
+    <fragment
+        android:id="@+id/nav_book_details"
+        android:name="by.test.turvo.ui.bookdetails.BookDetailsFragment"
+        android:label="@string/menu_book_details"
+        tools:layout="@layout/fragment_book_details" >
+        <argument
+            android:name="argument_book_id"
+            app:argType="string"
+            android:defaultValue="0" />
+    </fragment>
+
+</navigation>

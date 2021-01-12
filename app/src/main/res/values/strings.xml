@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">TurvoTest</string>
+    <string name="nav_header_title">TURVO</string>
+    <string name="nav_header_subtitle">Test App</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="menu_all">Library</string>
+    <string name="menu_favorites">Favorites</string>
+    <string name="more">More…</string>
+    <string name="menu_book_details">Book details</string>
+    <string name="list_no_items">No books here</string>
+</resources>

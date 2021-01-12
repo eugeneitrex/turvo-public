@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="by.test.turvo.ui.bookdetails.BookDetailsViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/detailsBookLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/detailsBookYear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/raleway_regular"
+                android:textColor="@color/turvo_black"
+                android:textSize="12sp"
+                android:text="@{viewModel.bookLiveData.year}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="2021" />
+
+            <ImageView
+                android:id="@+id/detailsBookImage"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_margin="5dp"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintTop_toBottomOf="@+id/detailsBookYear" />
+
+            <TextView
+                android:id="@+id/detailsBookName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:fontFamily="@font/raleway_bold"
+                android:gravity="center"
+                android:textColor="@color/turvo_black"
+                android:textSize="18sp"
+                android:text="@{viewModel.bookLiveData.name}"
+                app:layout_constraintTop_toBottomOf="@+id/detailsBookImage"
+                tools:layout_editor_absoluteX="5dp"
+                tools:text="Name of book" />
+
+            <TextView
+                android:id="@+id/detailsBookDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:fontFamily="@font/raleway_regular"
+                android:textColor="@color/turvo_black_2"
+                android:textSize="14sp"
+                android:text="@{viewModel.bookLiveData.excerpt}"
+                app:layout_constraintTop_toBottomOf="@+id/detailsBookName"
+                tools:text="Description" />
+
+            <CheckBox
+                android:id="@+id/detailsAddToFavs"
+                style="@style/FavoriteCheckboxStyle"
+                android:checked="false"
+                android:layout_marginTop="25dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/detailsBookDescription"
+                tools:checked="false" />
+
+            <TextView
+                android:id="@+id/detailsBookAuthor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/raleway_regular"
+                android:textColor="@color/turvo_black_2"
+                android:textSize="14sp"
+                android:layout_marginTop="25dp"
+                android:text="@{viewModel.bookLiveData.author}"
+                app:layout_constraintBottom_toTopOf="@+id/detailsIsbn"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/detailsAddToFavs"
+                tools:text="Book Author" />
+
+            <TextView
+                android:id="@+id/detailsIsbn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:fontFamily="@font/raleway_light"
+                android:textColor="@color/turvo_black_2"
+                android:textSize="12sp"
+                android:text="@{viewModel.bookLiveData.isbn}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:text="0000000" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</layout>
